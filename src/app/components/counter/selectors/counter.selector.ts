@@ -6,12 +6,14 @@ export interface AppState {
     counter: number;
 }
 
-export const selectFeature = (state:selectorType) => state;
+export const selectFeature = (state:AppState) => state.counter;
 
 export const selectCounter = createSelector(
     selectFeature,
     (state:number) => state,
 )
+
+
 
 
 

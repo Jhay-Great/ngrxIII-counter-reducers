@@ -15,5 +15,6 @@ export const reset = createAction('[Counter] reset');
 
 export const setCounter = createAction(
     '[Counter] set count value',
-    props<{counter: number}>(),
+    // props<{counter: number}>(),
+    (counter: number) => ({ counter })
 );

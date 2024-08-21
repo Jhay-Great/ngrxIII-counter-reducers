@@ -23,6 +23,7 @@ export class CounterComponent {
     private store: Store<{counter: number}>,
   ) {
     this.count$ = this.store.select(selectCounter);
+    this.count$.subscribe(value => localStorage.setItem('counter', JSON.stringify(value)));
 
   };
 

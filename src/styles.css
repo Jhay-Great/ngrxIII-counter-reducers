@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-variant-1: #006270;
+    --color-variant-2: #009394;
+    --color-variant-3: #00E0C7;
+    --color-white: #fff;
+    --color-black: #000;
+    /* --bg-main:  */
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+
+    color: var(--color-white);
+    font-family: sans-serif;
+    background: linear-gradient(45deg, var(--color-variant-1), #00BBD6);
+}
+
+app-root {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

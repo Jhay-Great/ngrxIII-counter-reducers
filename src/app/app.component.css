@@ -1,9 +1,7 @@
 app-counter {
     width: min(500px, 90%);
-    /* height: 100%; */
-    aspect-ratio: 5/4;
+    /* aspect-ratio: 5/4; */
     background-color: var(--color-variant-2);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +10,8 @@ app-counter {
     border: none;
     border-radius: 20px;
     box-shadow: 0px 0px 20px #0002;
-    /* box-shadow: 0px 0px 10px var(--color-variant-2); */
+    height: fit-content;
+    padding-block: 3rem;
 }
 
 router-outlet {

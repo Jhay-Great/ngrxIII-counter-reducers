@@ -12,15 +12,21 @@
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M20 12L16 8M20 12L16 16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>    </button>
 </div>
 
-<div class="btns">
-    <button class="increase" (click)="decrease()">
-        -1
-    </button>
+<div class="user-interactions">
+    <div class="interval-presets">
+        <p>Interval (x)</p>
+        <input type="number" name="interval-preset" id="interval-preset" #intervalPreset>
+    </div>
+    <div class="btns">
+        <button class="increase" (click)="decrease()">
+            -1
+        </button>
+        
+        <button class="reset" (click)="reset()">0</button>
+        
+        <button class="increase" (click)="increase()">
+            +1
+        </button>
     
-    <button class="reset" (click)="reset()">0</button>
-    
-    <button class="increase" (click)="increase()">
-        +1
-    </button>
-
+    </div>
 </div>

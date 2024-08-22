@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { counterReducer } from './components/counter/reducers/counter.reducer';
+import { reducers } from './components/reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [

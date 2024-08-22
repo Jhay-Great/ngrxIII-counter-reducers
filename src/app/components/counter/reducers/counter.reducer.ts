@@ -3,7 +3,7 @@ import { createReducer, on } from "@ngrx/store";
 import { increment, decrement, reset, setCounter } from "../actions/counter.action";
 
 // defining the shape of the state
-type counterType = number ;
+export type counterType = number ;
 
 interface counterInterface {
     counter: number,

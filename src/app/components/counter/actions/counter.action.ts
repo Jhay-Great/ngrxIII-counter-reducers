@@ -5,16 +5,20 @@ interface setCounter {
     counter: number;
 }
 
-export const increment = createAction(
-    '[Counter] increment',
-);
+// defining action types
+export const INCREASE_COUNT = '[Counter] increment';
+export const DECREASE_COUNT = '[Counter] decrement';
+export const RESET = '[Counter] reset';
+export const SET_INITIAL_COUNT = '[Counter] set count value';
 
-export const decrement = createAction('[Counter] decrement');
+export const increment = createAction( INCREASE_COUNT );
 
-export const reset = createAction('[Counter] reset');
+export const decrement = createAction( DECREASE_COUNT );
+
+export const reset = createAction( RESET );
 
 export const setCounter = createAction(
-    '[Counter] set count value',
+    SET_INITIAL_COUNT,
     // props<{counter: number}>(),
     (counter: number) => ({ counter })
 );

@@ -50,7 +50,7 @@
 }
 
 .btns {
-    width: fit-content;
+    width: 80%;
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -83,3 +83,18 @@
     stroke: var(--color-black);
 }
 
+@media screen and (max-width: 580px) {
+    .btns {
+        padding: .5rem 1rem;
+    }
+    .btns button {
+        font-size: 1rem;
+    }
+    
+    .btns button,
+    .user-input button {
+        width: 35px;
+        height: 31px;
+    }
+
+}

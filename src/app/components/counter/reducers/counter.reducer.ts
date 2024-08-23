@@ -29,5 +29,5 @@ export function numberCounterReducers(
     state: counterType | undefined,
     action: Action
   ): counterType {
-    return _counterReducer(state, action as any); // Use 'any' to bypass type issue, but use caution
+    return _counterReducer(state, action as any); 
   }

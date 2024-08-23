@@ -31,7 +31,6 @@ export class CounterComponent {
 
   getInterval (value:string) {
     this.isActive = value ? true : false;
-    console.log(this.isActive)
   }
 
   increase (value: string) {

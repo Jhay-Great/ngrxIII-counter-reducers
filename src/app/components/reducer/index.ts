@@ -7,7 +7,7 @@ import { counterType } from "../counter/reducers/counter.reducer";
 import { StringInterface } from "../counter/reducers/string.counter.reducer";
 
 // define the state of the app store
-interface AppState {
+export interface AppState {
     numberCounter: counterType,
     stringCount: StringInterface
 }

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 // local module imports
 import { increment, decrement, reset, setCounter } from './actions/counter.action';
 import { selectCounter } from './selectors/counter.selector';
+import { AppState } from '../reducer';
 
 @Component({
   selector: 'app-counter',
@@ -21,7 +22,7 @@ export class CounterComponent {
   
 
   constructor (
-    private store: Store<{counter: number}>,
+    private store: Store<AppState>,
   ) {
     // this.count$ = this.store.select(state => state.counter);;
     this.count$ = this.store.select(selectCounter);
@@ -45,7 +46,7 @@ export class CounterComponent {
     this.store.dispatch(reset());
   };
 
-  setCounter (value:string) {
+  setInitialCount (value:string) {
     // this.store.dispatch(setCounter({counter: +value}));
     this.store.dispatch(setCounter({interval: +value}));
   }

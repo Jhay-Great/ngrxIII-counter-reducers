@@ -1,11 +1,21 @@
 
-// // import { AppState } from "../counter/selectors/counter.selector"
-// import { counterActions } from "../counter/actions/counter.action"
-// import { _counterReducer } from "../counter/reducers/counter.reducer"
-// import { counterType } from "../counter/reducers/counter.reducer"
+
+import { ActionReducerMap } from "@ngrx/store";
+import { numberCounterReducers } from "../counter/reducers/counter.reducer";
+import { stringCounterReducer } from "../counter/reducers/string.counter.reducer";
+import { counterType } from "../counter/reducers/counter.reducer";
+import { StringInterface } from "../counter/reducers/string.counter.reducer";
+
+// define the state of the app store
+interface AppState {
+    numberCounter: counterType,
+    stringCount: StringInterface
+}
 
 
-// export function reducers(state:counterType | undefined, action:counterActions): counterType {
-//     return _counterReducer(state, action)
-//     // return counterReducer(state ?? 0, action as counterActions)
-// }
+// define the combinedReducer object
+export const combinedReducer: ActionReducerMap<AppState> = {
+    numberCounter: numberCounterReducers,
+    stringCount: stringCounterReducer,
+}
+

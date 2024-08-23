@@ -46,7 +46,8 @@ export class CounterComponent {
   };
 
   setCounter (value:string) {
-    this.store.dispatch(setCounter({counter: +value}));
+    // this.store.dispatch(setCounter({counter: +value}));
+    this.store.dispatch(setCounter({interval: +value}));
   }
 
 }

@@ -10,8 +10,10 @@ import { reducers } from './components/reducer';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideStore(),
-    provideState({ name: 'counter', reducer: counterReducer }),
+    provideStore({
+      counter: reducers
+    }),
+    // provideState({ name: 'counter', reducer: counterReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

@@ -18,13 +18,13 @@
         <input type="number" name="interval-preset" id="interval-preset" #intervalPreset>
     </div>
     <div class="btns">
-        <button class="increase" (click)="decrease()">
+        <button class="increase" (click)="decrease(intervalPreset.value)">
             -1
         </button>
         
         <button class="reset" (click)="reset()">0</button>
         
-        <button class="increase" (click)="increase()">
+        <button class="increase" (click)="increase(intervalPreset.value)">
             +1
         </button>
     

@@ -29,20 +29,10 @@ export const _counterReducer = createReducer(
     (state: number, { interval }): counterType =>
       state > 0 ? state - interval : 0
   ),
-//   on(reset, (): counterType => 0),
   on(reset, (): counterType => initial),
   on(setCounter, (state, { interval }) => initial = interval)
-  // on(setCounter, (state, {counter}) => counter),
-//   on(setCounter, (state, { interval }) => interval)
 );
 
-// export function numberCounterReducers(
-//   state: counterType | undefined,
-//   action: counterActions don't use this
-// ): counterType {
-//   return _counterReducer(state, action);
-//   // return counterReducer(state ?? 0, action as counterActions)
-// }
 
 export function numberCounterReducers(
     state: counterType | undefined,

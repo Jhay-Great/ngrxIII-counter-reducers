@@ -36,7 +36,7 @@ export const _counterReducer = createReducer(
 
 // export function numberCounterReducers(
 //   state: counterType | undefined,
-//   action: counterActions
+//   action: counterActions don't use this
 // ): counterType {
 //   return _counterReducer(state, action);
 //   // return counterReducer(state ?? 0, action as counterActions)

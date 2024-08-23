@@ -12,6 +12,14 @@ export interface AppState {
     stringCount: StringInterface
 }
 
+export interface CountAppState {
+    numberCounter: counterType,
+}
+
+export interface StringAppState {
+    stringCount: StringInterface
+}
+
 
 // define the combinedReducer object
 export const combinedReducer: ActionReducerMap<AppState> = {

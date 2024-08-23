@@ -4,16 +4,15 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideStore, provideState } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { counterReducer } from './components/counter/reducers/counter.reducer';
-import { reducers } from './components/reducer';
+import { _counterReducer, reducers } from './components/counter/reducers/counter.reducer';
+// import { reducers } from './components/reducer';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideStore({
-      counter: reducers
-    }),
-    // provideState({ name: 'counter', reducer: counterReducer }),
+    provideStore(),
+    provideState({ name: 'counter', reducer: reducers }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

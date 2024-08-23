@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 
-import { increment, decrement, reset, setCounter } from "../actions/counter.action";
+import { increment, decrement, reset, setCounter, counterActions } from "../actions/counter.action";
 
 // defining the shape of the state
 export type counterType = number ;
@@ -13,7 +13,7 @@ export type counterType = number ;
 // const initialValue:counterType = 0;
 const initial:counterType = Number(localStorage.getItem('counter')) ?? 0;
 
-export const counterReducer = createReducer(
+export const _counterReducer = createReducer(
     // initialValue,
     initial,
     on(increment, (state:number, {interval}):counterType => state + interval),
@@ -21,3 +21,8 @@ export const counterReducer = createReducer(
     on(reset, ():counterType => 0),
     on(setCounter, (state, {counter}) => counter),
 )
+
+export function reducers(state:counterType | undefined, action:counterActions): counterType {
+    return _counterReducer(state, action)
+    // return counterReducer(state ?? 0, action as counterActions)
+}

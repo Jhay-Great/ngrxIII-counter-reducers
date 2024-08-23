@@ -21,7 +21,8 @@
     border-radius: 5px;
     outline: none;
 }
-#initial-value-input::placeholder {
+#initial-value-input::placeholder,
+#interval-preset::placeholder {
     font-size: .7rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -107,6 +108,11 @@
     border-radius: 5px;
     border: 1px solid transparent;
     outline: none;
+}
+
+.btn button.disabled {
+    background: #ccc;
+    color: #999;
 }
 
 @media screen and (max-width: 580px) {

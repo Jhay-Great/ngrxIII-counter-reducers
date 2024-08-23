@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { AsyncPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 // local module imports
 import { increment, decrement, reset, setCounter } from './actions/counter.action';
@@ -10,13 +10,14 @@ import { selectCounter } from './selectors/counter.selector';
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [CommonModule],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })
 export class CounterComponent {
 
   count$!:Observable<number>;
+  isActive:boolean = false;
   
 
   constructor (
@@ -27,6 +28,11 @@ export class CounterComponent {
     this.count$.subscribe(value => localStorage.setItem('counter', JSON.stringify(value)));
 
   };
+
+  getInterval (value:string) {
+    this.isActive = value ? true : false;
+    console.log(this.isActive)
+  }
 
   increase (value: string) {
     this.store.dispatch(increment({interval: +value}));

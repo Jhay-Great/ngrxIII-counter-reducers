@@ -24,7 +24,6 @@ export class CounterComponent {
   constructor (
     private store: Store<AppState>,
   ) {
-    // this.count$ = this.store.select(state => state.counter);;
     this.count$ = this.store.select(selectCounter);
     this.count$.subscribe(value => localStorage.setItem('counter', JSON.stringify(value)));
 
@@ -47,7 +46,6 @@ export class CounterComponent {
   };
 
   setInitialCount (value:string) {
-    // this.store.dispatch(setCounter({counter: +value}));
     this.store.dispatch(setCounter({interval: +value}));
   }
 

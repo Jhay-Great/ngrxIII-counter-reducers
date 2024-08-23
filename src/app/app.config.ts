@@ -11,8 +11,8 @@ import { combinedReducer } from './components/reducer';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    // provideStore(), //use this when not using the combinedReducer object from the ActionReducerMap
     provideStore(combinedReducer),
+    // provideStore(), //use this when not using the combinedReducer object from the ActionReducerMap
     // provideState({ name: 'counter', reducer: numberCounterReducers }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],

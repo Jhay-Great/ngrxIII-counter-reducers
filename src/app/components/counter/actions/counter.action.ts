@@ -1,9 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-// interface setCounter {
-//   type: string;
-//   counter: number;
-// }
+
 interface actionInterface {
     interval: number;
 } 
@@ -31,8 +28,6 @@ export const reset = createAction(
 
 export const setCounter = createAction(
   SET_INITIAL_COUNT,
-//   (counter: number) => ({ counter })
-  // props<{counter: number}>(),
   props<actionInterface>(),
 );
 
